@@ -16,6 +16,7 @@ export const Inner = styled.div`
 
 export const Pane = styled.div`
     width: 50%;
+    align-items: center;
     @media (max-width: 1000px) {
         width: 100%;
         padding: 0 45px;
