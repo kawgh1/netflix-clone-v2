@@ -29,6 +29,10 @@ Accordion.Frame = function AccordionFrame({ children, ...restProps }) {
 };
 
 // Item is where State is passed, giving user ability to toggle
+// Wrapping each <Item> in a <ToggleContext.Provider> tells Context
+// hey, I want you to share a single state across each of the Item
+// that will be passed down to Item.Header and Item.Body
+// and this is how the toggle effect is handled
 Accordion.Item = function AccordionItem({ children, ...restProps }) {
     const [toggleShow, setToggleShow] = useState(false);
 
