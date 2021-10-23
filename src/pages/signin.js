@@ -8,7 +8,7 @@ import * as ROUTES from "../constants/routes";
 
 export default function SignIn() {
     const history = useHistory();
-    const { firebase } = useContext(FirebaseContext);
+    const { firebaseApp } = useContext(FirebaseContext);
 
     const [emailAddress, setEmailAddress] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ export default function SignIn() {
     const handleSignin = (event) => {
         event.preventDefault();
 
-        return firebase
+        return firebaseApp
             .auth()
             .signInWithEmailAndPassword(emailAddress, password)
             .then(() => {
@@ -38,7 +38,7 @@ export default function SignIn() {
                 <Form>
                     <Form.TextSmall style={{ color: "lime" }}>
                         For demo purposes user can enter
-                        username="test@gmail.com" and password="test"
+                        username="test@gmail.com" and password="test123"
                     </Form.TextSmall>
                     <Form.Title>Sign In</Form.Title>
 
