@@ -14,8 +14,8 @@ export function BrowseContainer({ slides }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [slideRows, setSlideRows] = useState([]);
 
-    const { firebase } = useContext(FirebaseContext);
-    const user = firebase.auth().currentUser || {};
+    const { firebaseApp } = useContext(FirebaseContext);
+    const user = firebaseApp.auth().currentUser || {};
 
     useEffect(() => {
         setTimeout(() => {
@@ -90,7 +90,7 @@ export function BrowseContainer({ slides }) {
                                 <Header.Group>
                                     <Header.TextLink
                                         onClick={() =>
-                                            firebase.auth().signOut()
+                                            firebaseApp.auth().signOut()
                                         }
                                     >
                                         Sign out
