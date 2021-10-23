@@ -13,6 +13,8 @@ export function BrowseContainer({ slides }) {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
     const [slideRows, setSlideRows] = useState([]);
+    // show dropdown on profile click
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const { firebaseApp } = useContext(FirebaseContext);
     const user = firebaseApp.auth().currentUser || {};
@@ -78,8 +80,11 @@ export function BrowseContainer({ slides }) {
                             searchTerm={searchTerm}
                             setSearchTerm={setSearchTerm}
                         />
-                        <Header.Profile>
-                            <Header.Picture src={user.photoURL} />
+                        <Header.Profile >
+                        <Header.Picture src={user.photoURL} onClick={() => (setShowDropdown(!showDropdown), console.log("showDropdown =", showDropdown))}/>
+                            {showDropdown ? (
+                                
+                                
                             <Header.Dropdown>
                                 <Header.Group>
                                     <Header.Picture src={user.photoURL} />
@@ -97,6 +102,8 @@ export function BrowseContainer({ slides }) {
                                     </Header.TextLink>
                                 </Header.Group>
                             </Header.Dropdown>
+                            
+                            ) : ('')}
                         </Header.Profile>
                     </Header.Group>
                 </Header.Frame>

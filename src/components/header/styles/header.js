@@ -12,7 +12,7 @@ export const Background = styled.div`
             rgba(0, 0, 0, 0.35) 85%,
             rgba(0, 0, 0, 0.35) 100%
         ),
-        url(${({ src }) => src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
+        url(${({ src }) =>  src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
             top left / cover no-repeat;
     @media (max-width: 1100px) {
         ${({ dontShowOnSmallViewPort }) =>
@@ -170,6 +170,10 @@ export const Profile = styled.div`
         display: flex;
         flex-direction: column;
     }
+   
+    
+    
+    
 `;
 
 export const Feature = styled(Container)`

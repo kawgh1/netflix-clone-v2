@@ -72,7 +72,8 @@ Header.Search = function HeaderSearch({
 };
 
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
-    return <Profile {...restProps}>{children}</Profile>;
+   
+    return <Profile {...restProps} >{children}</Profile>;
 };
 
 Header.Feature = function HeaderFeature({ children, ...restProps }) {

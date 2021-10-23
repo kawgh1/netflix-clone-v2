@@ -3,10 +3,14 @@
 https://www.youtube.com/watch?v=x_EEwGe-a9o
 https://github.com/karlhadwen/netflix/
 
+### Live site
+https://netflix-clone-v2-31e72.web.app/
+
 ## Features
 
 -   Compound Components
 -   Styled Components
+-   Custom Hooks
 
 ## Tools Used
 
